@@ -1,0 +1,523 @@
+<!--
+@author: Oscar Alderete - me@oscaralderete.com
+@website: http://oscaralderete.com
+@generator: NetBeans IDE v11.3
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="author" content="Oscar Alderete - me@oscaralderete.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<title>Fancy radio & checkbox inputs</title>
+<link rel="stylesheet" href="css/fancy-radio-checkbox.css">
+
+<!-- page styles, radios/checkboxes don't depend on it -->
+<style>
+body{
+	font-family: Arial,Helvetica,sans-serif
+}
+.flex-container{
+	display: flex;
+	justify-content: space-between
+}
+.flex-container ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0
+}
+.flex-container ul > li{
+	margin-bottom: 1em
+}
+.right{
+	text-align: right
+}
+.console{
+	position: fixed;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+	background-color: #000;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #D2FF4D;
+	padding: .5em;
+	overflow: auto;
+	box-shadow: 0 0 .5em #555
+}
+.console.alt{
+	color: #73DCFF
+}
+.spacer{
+	height: 10em
+}
+</style>
+
+</head>
+<body>
+
+<h1>Fancy radio & checkbox inputs</h1>
+
+<p>This CSS is based on <a href="https://codepen.io/aaroniker/pen/ZEYoxEY" target="_blank">https://codepen.io/aaroniker/pen/ZEYoxEY</a>, I was adapting that on a daily work project when, suddendly, after some erratic modifications... whoa, that muted on this!</p>
+<p>I'm a developer not a CSS guy, I'm sharing it because I think it could be useful to others, so if you have some complains about "semantic" or how I set CSS rules or whatever, now you know why...</p>
+<p><b>IMPORTANT!</b> There is a quirky behaviour on narrow screens and multiple option columns (as happens in this current page layout), the background image desplaces in an ugly way, this is because the CSS rules operate on &lt;label&gt; tag. I guess you can fix it wraping the &lt;input&gt; tag with a &lt;span&gt; and then applying the background image on the &lt;span&gt; tag, but it seems to overload the markup. Furthermore in my personal experience, most cases of forms containing options/checkboxes use a single column layout.</p>
+<hr>
+<p>PS: To show serialized data I'm using this cool plugin: <a href="https://github.com/marioizquierdo/jquery.serializeJSON" target="_blank">SerializeJSON jQuery plugin</a>.</p>
+
+
+
+<h2>Input radios</h2>
+
+<div class="flex-container">
+	<!-- left side alignment -->
+	<form name="form1" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Left aligned (default):</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="one" checked>
+					One
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="two">
+					Two
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="three" disabled>
+					Three
+				</label> (I'm disabled)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="four">
+					Four
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<!-- right side alignment -->
+	<form name="form2" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Radio placed to the right of label text:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					One 
+					<input type="radio" name="sample2" value="one">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Two 
+					<input type="radio" name="sample2" value="two" checked>
+				</label>
+			</li>
+			<li>
+				(I'm disabled too) 
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Three 
+					<input type="radio" name="sample2" value="three" disabled>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Four 
+					<input type="radio" name="sample2" value="four">
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<!-- right side alignment + text-alignment = right -->
+	<form name="form3" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul class="right">
+			<li>Right aligned:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					One 
+					<input type="radio" name="sample3" value="one">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Two 
+					<input type="radio" name="sample3" value="two">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Three 
+					<input type="radio" name="sample3" value="three" checked>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Four 
+					<input type="radio" name="sample3" value="four">
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+<div>
+	<p>Inline radios:</p>
+	<form name="form4" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<label class="fancy-radio-checkbox">
+			<input type="radio" name="sample4" value="one">
+			One
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="radio" name="sample4" value="two">
+			Two
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="radio" name="sample4" value="three">
+			Three
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="radio" name="sample4" value="four" checked>
+			Four
+		</label>
+		<br>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+
+	<br>
+
+	<form name="form5" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			One 
+			<input type="radio" name="sample5" value="one">
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Two 
+			<input type="radio" name="sample5" value="two" checked>
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Three 
+			<input type="radio" name="sample5" value="three">
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Four 
+			<input type="radio" name="sample5" value="four">
+		</label>
+		<br>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+<h2>Checkboxes</h2>
+
+<div class="flex-container">
+	<!-- left side alignment -->
+	<form name="form6" data-type="checkbox" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Left aligned (default):</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="checkbox" name="enable_gps" value="true" checked>
+					Enable GPS
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="checkbox" name="receive_notifications" value="true">
+					Receive notifications
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="checkbox" name="show_user_info" value="true" disabled>
+					Show user info (disabled)
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="checkbox" name="manage_widgets_on_menu" value="true" checked>
+					Manage widgets on menu
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<!-- right side alignment -->
+	<form name="form7" data-type="checkbox" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Checkboxes placed to the right of label text:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Enable GPS 
+					<input type="checkbox" name="enable_gps" value="true" checked>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Receive notifications 
+					<input type="checkbox" name="receive_notifications" value="true" checked>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Show user info (I'm disabled too) 
+					<input type="checkbox" name="show_user_info" value="true" disabled>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Manage widgets on menu 
+					<input type="checkbox" name="manage_widgets_on_menu" value="true" checked>
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<!-- right side alignment + text-alignment = right -->
+	<form name="form8" data-type="checkbox" onsubmit="app.submit()" autocomplete="off">
+		<ul class="right">
+			<li>Right aligned:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Enable GPS 
+					<input type="checkbox" name="enable_gps" value="true">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Receive notifications 
+					<input type="checkbox" name="receive_notifications" value="true" checked>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Show user info 
+					<input type="checkbox" name="show_user_info" value="true" checked>
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Manage widgets on menu 
+					<input type="checkbox" name="manage_widgets_on_menu" value="true">
+				</label>
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+<div>
+	<p>Inline checkboxes:</p>
+	<form name="form9" data-type="checkbox" onsubmit="app.submit()" autocomplete="off">
+		<label class="fancy-radio-checkbox">
+			<input type="checkbox" name="accept_cookie" value="true" checked>
+			Accept cookies
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="checkbox" name="auto_save" value="true" checked>
+			Auto save
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="checkbox" name="show_location" value="true">
+			Show location
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox">
+			<input type="checkbox" name="display_emoticons" value="true">
+			Display emoticons
+		</label>
+		<br>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+
+	<br>
+
+	<form name="form10" data-type="checkbox" onsubmit="app.submit()" autocomplete="off">
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Accept cookies
+			<input type="checkbox" name="accept_cookies" value="true" checked>
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Auto save 
+			<input type="checkbox" name="auto_save" value="true" checked>
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Show location
+			<input type="checkbox" name="show_location" value="true">
+		</label>&nbsp;&nbsp;
+		<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+			Display emoticons 
+			<input type="checkbox" name="display_emoticons" value="true">
+		</label>
+		<br>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+<h2>Custom backgrounds (just add your own SVG image)</h2>
+
+<div class="flex-container">
+	<!-- left side alignment -->
+	<form name="form10" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Left aligned checkboxes:</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="one" checked>
+					Regular
+				</label> (default)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox narrow_bg">
+					<input type="radio" name="sample1" value="two">
+					Modified 1
+				</label> (narrow colored background)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox narrow_bg">
+					<input type="radio" name="sample1" value="three">
+					Modified 2
+				</label> (narrow colored background)
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<form name="form10b" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Left aligned checkboxes:</li>
+			<li>
+				<label class="fancy-radio-checkbox">
+					<input type="radio" name="sample1" value="one" checked>
+					Regular
+				</label> (default)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox check_times_bg">
+					<input type="radio" name="sample1" value="two">
+					Modified A
+				</label> (check times background)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox check_times_bg">
+					<input type="radio" name="sample1" value="three">
+					Modified B
+				</label> (check times background)
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
+
+<p>&nbsp;</p>
+
+<div class="flex-container">
+	<form name="form11" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul>
+			<li>Radio placed to the right of label text:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Regular
+					<input type="radio" name="sample2" value="one">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox faces_bg fancy-radio-checkbox-bg-right">
+					Modified 1 
+					<input type="radio" name="sample2" value="two" checked>
+				</label> (faces background)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox faces_bg fancy-radio-checkbox-bg-right">
+					Modified 2 
+					<input type="radio" name="sample2" value="three">
+				</label> (faces background)
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+	<!-- right side alignment + text-alignment = right -->
+	<form name="form12" data-type="radio" onsubmit="app.submit()" autocomplete="off">
+		<ul class="right">
+			<li>Right aligned:</li>
+			<li>
+				<label class="fancy-radio-checkbox fancy-radio-checkbox-bg-right">
+					Regular 
+					<input type="radio" name="sample3" value="one">
+				</label>
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox thumb_bg fancy-radio-checkbox-bg-right">
+					Modified A
+					<input type="radio" name="sample3" value="two">
+				</label> (thumbs background)
+			</li>
+			<li>
+				<label class="fancy-radio-checkbox thumb_bg fancy-radio-checkbox-bg-right">
+					Modified B
+					<input type="radio" name="sample3" value="three" checked>
+				</label> (thumbs background)
+			</li>
+			<li>
+				(Well, not the best background image, but you can do it better!)
+			</li>
+		</ul>
+		<button type="submit">Submit</button>
+	</form>
+
+</div>
+
+<div class="spacer"></div>
+
+<div id="console" class="console">
+	<pre>CONSOLE</pre>
+	<pre id="result"></pre>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.serializeJSON.3.2.1.js"></script>
+<script>
+var app={
+	counter: 0,
+	submit(){
+		event.preventDefault();
+		var obj=event.target,
+			x=$(obj),
+			y=$('#result'),
+			z=$('#console');
+		//old style output:
+		//y.empty().append('form: '+x.attr('name')).append('\ncurrent '+($(obj).data('type')==='radio'?'radio value':'checkbox value(s)')+': ').append(JSON.stringify(x.serializeJSON()));
+		//using interpolation way:
+		var form_name=x.attr('name'),
+			label=$(obj).data('type')==='radio'?'radio value':'checkbox value(s)',
+			value=JSON.stringify(x.serializeJSON());
+		y.empty().append(`form: ${form_name}\ncurrent ${label}: ${value}`);
+		if(this.counter%2===0){
+			z.removeClass('alt');
+		}
+		else{
+			z.addClass('alt');
+		}
+		this.counter++;
+	},
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+/*!
+@author: Oscar Alderete - me@oscaralderete.com
+@website: http://oscaralderete.com
+@generator: NetBeans IDE v11.3
+*/
+@checkedColor: #275EFE;
+@checkedColorR: 39;
+@checkedColorG: 94;
+@checkedColorB: 254;
+@diameter: 24px;
+@uncheckedColor: #fff;
+@disabledColor: #dbdbea;
+@borderColor: #BBC1E1;
+@disabledInner: #E1E6F9;
+
+
+
+//label rules
+/*
+You just draw your own SVG image, ratio width must be the double than height,
+then use a SVG to CSS converter and place the result here...
+*/
+label.fancy-radio-checkbox{
+	background: url('data:image/svg+xml,%3Csvg viewBox="0 0 128 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="128" height="64"%3E%3Crect x="0" y="12" width="128" height="40" rx="20" fill="%23dbdbea"/%3E%3C/svg%3E') left center no-repeat transparent;
+	background-size: 2*@diameter auto;
+	display: inline-block;
+	line-height: @diameter;
+	cursor: pointer
+}
+label.fancy-radio-checkbox.fancy-radio-checkbox-bg-right{
+	background-position: right center
+}
+
+//custom label backgrounds
+label.fancy-radio-checkbox.narrow_bg{
+	background: url('data:image/svg+xml,%3Csvg viewBox="0 0 128 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="128" height="64"%3E%3Crect x="20" y="12" width="88" height="40" rx="20" fill="%23FFB20C"/%3E%3C/svg%3E') left center no-repeat transparent;
+	background-size: 2*@diameter auto;
+}
+label.fancy-radio-checkbox.check_times_bg{
+	background: url('data:image/svg+xml,%3Csvg viewBox="0 0 128 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="128" height="64"%3E%3Crect x="0" y="0" width="128" height="64" fill="%23cccccc" rx="32" ry="32"/%3E%3Cpath d="M 82.2 32.9305 L 78.9333 39.6783 L 91.4133 45.7807 L 98.1333 49.0667 L 101.4 42.3188 L 113.0667 18.2193 L 106.3467 14.9333 L 94.68 39.0329 L 82.2 32.9305 Z" fill="white"/%3E%3Cpath d="M 42.9006 14.9333 L 32 25.834 L 21.0994 14.9333 L 14.9333 21.0994 L 25.834 32 L 14.9333 42.9006 L 21.0994 49.0667 L 32 38.166 L 42.9006 49.0667 L 49.0667 42.9006 L 38.166 32 L 49.0667 21.0994 L 42.9006 14.9333 Z" fill="white"/%3E%3C/svg%3E') left center no-repeat transparent;
+	background-size: 2*@diameter auto;
+}
+label.fancy-radio-checkbox.faces_bg{
+	background: url('data:image/svg+xml,%3Csvg viewBox="0 0 128 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="128" height="64"%3E%3Ccircle cx="32" cy="32" r="32" fill="%23dbdbea"/%3E%3Cpath d="M 18.6666 26 C 18.6666 23.4226 20.2188 21.3333 22.1333 21.3333 C 24.048 21.3333 25.6 23.4226 25.6 26 C 25.6 28.5774 24.048 30.6667 22.1333 30.6667 C 20.2188 30.6667 18.6666 28.5774 18.6666 26 Z" fill="%23683405"/%3E%3Cpath d="M 38.4 26 C 38.4 23.4226 39.952 21.3333 41.8667 21.3333 C 43.7813 21.3333 45.3334 23.4226 45.3334 26 C 45.3334 28.5774 43.7813 30.6667 41.8667 30.6667 C 39.952 30.6667 38.4 28.5774 38.4 26 Z" fill="%23683405"/%3E%3Cpath d="M 47.0662 48.3904 C 47.1334 49.8978 40.5873 39.3333 32.2667 39.3333 C 23.946 39.3333 16.8143 49.8948 16.9348 48.3904 C 17.4235 42.2892 24.0327 35.4667 32.3534 35.4667 C 40.6741 35.4667 46.8218 42.9165 47.0662 48.3904 Z" fill="%23683405"/%3E%3Ccircle cx="96" cy="32" r="32" fill="%23ffcb3a"/%3E%3Cpath d="M 83.4783 22.9565 C 83.4783 18.0259 85.0355 14.029 86.9565 14.029 C 88.8776 14.029 90.4348 18.0259 90.4348 22.9565 C 90.4348 27.8871 88.8776 31.8841 86.9565 31.8841 C 85.0355 31.8841 83.4783 27.8871 83.4783 22.9565 Z" fill="%23683405"/%3E%3Cpath d="M 101.5652 22.9565 C 101.5652 18.0259 103.1224 14.029 105.0435 14.029 C 106.9645 14.029 108.5217 18.0259 108.5217 22.9565 C 108.5217 27.8871 106.9645 31.8841 105.0435 31.8841 C 103.1224 31.8841 101.5652 27.8871 101.5652 22.9565 Z" fill="%23683405"/%3E%3Cpath d="M 74.4928 37.0084 C 74.397 34.7798 83.4001 39.4203 95.2463 39.4203 C 107.0927 39.4203 117.5629 34.7843 117.3914 37.0084 C 116.6957 46.029 107.2859 56.1159 95.4396 56.1159 C 83.5934 56.1159 74.8406 45.1014 74.4928 37.0084 Z" fill="%23683405"/%3E%3C/svg%3E') right center no-repeat transparent;
+	background-size: 2*@diameter auto;
+}
+label.fancy-radio-checkbox.thumb_bg{
+	background: url('data:image/svg+xml,%3Csvg viewBox="0 0 128 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="128" height="64"%3E%3Cpath d="M 110.9834 11.4176 C 111.0516 15.9915 108.5259 18.2443 107.024 22.4768 L 119.7213 22.6133 C 123.5442 22.7499 125.8115 26.4367 125.8651 29.44 C 125.9335 33.2629 123.6807 34.3552 123.6807 35.1744 C 123.6807 35.584 124.0902 36.5397 124.0902 37.0859 C 124.2268 37.632 124.2268 38.3147 124.2268 38.5877 C 124.2268 42.1376 122.5885 43.776 122.5885 44.4587 C 122.5885 44.8683 122.8616 46.5067 122.8616 46.7797 C 122.8616 48.1451 122.5885 49.7835 121.7693 51.2853 C 121.4962 51.8315 120.9501 52.2411 120.677 52.9237 C 120.4039 53.4699 120.8136 54.5621 120.8136 54.9717 C 120.8136 62.0715 110.9834 61.6619 107.7067 61.6619 C 107.2971 61.6619 104.5665 61.6619 102.9281 61.3888 C 101.8359 61.2523 100.7437 60.9792 99.6515 60.7061 C 95.5555 59.7504 91.4596 57.0197 87.3638 56.2005 C 86.9541 56.064 85.111 56.4053 84.9063 55.2448 L 84.9063 29.44 C 89.8213 24.0128 91.9375 19.5755 96.6477 14.2848 C 97.8826 12.8978 98.0131 11.008 98.4226 9.3696 C 99.3784 5.8197 99.788 2.1333 103.2012 2.1333 C 109.2085 2.1333 110.9222 7.3221 110.9834 11.4176 Z" fill="green"/%3E%3Cpath d="M 70.6388 54.3573 C 70.6388 52.6984 71.9835 51.3536 73.6425 51.3536 C 75.3014 51.3536 76.6461 52.6984 76.6461 54.3573 C 76.6461 56.0163 75.3014 57.3611 73.6425 57.3611 C 71.9835 57.3611 70.6388 56.0163 70.6388 54.3573 ZM 68.8639 28.2795 C 67.3558 28.2795 66.1333 29.502 66.1333 31.0101 L 66.1333 59.136 C 66.1333 60.6441 67.3558 61.8667 68.8639 61.8667 L 78.421 61.8667 C 79.9291 61.8667 81.1516 60.6441 81.1516 59.136 L 81.1516 31.0101 C 81.1516 29.502 79.9291 28.2795 78.421 28.2795 L 68.8639 28.2795 Z" fill="green"/%3E%3Cpath d="M 17.0166 52.5824 C 16.9484 48.0085 19.4741 45.7557 20.976 41.5232 L 8.2787 41.3867 C 4.4559 41.2501 2.1885 37.5633 2.1349 34.56 C 2.0667 30.7371 4.3193 29.6448 4.3193 28.8256 C 4.3193 28.416 3.9098 27.4603 3.9098 26.9141 C 3.7732 26.368 3.7732 25.6853 3.7732 25.4123 C 3.7732 21.8624 5.4116 20.224 5.4116 19.5413 C 5.4116 19.1317 5.1385 17.4933 5.1385 17.2203 C 5.1385 15.8549 5.4116 14.2165 6.2307 12.7147 C 6.5038 12.1685 7.0499 11.7589 7.323 11.0763 C 7.5961 10.5301 7.1864 9.4379 7.1864 9.0283 C 7.1864 1.9285 17.0166 2.3381 20.2933 2.3381 C 20.7029 2.3381 23.4336 2.3381 25.0719 2.6112 C 26.1641 2.7477 27.2563 3.0208 28.3486 3.2939 C 32.4445 4.2496 36.5404 6.9803 40.6362 7.7995 C 41.0459 7.936 42.889 7.5947 43.0938 8.7552 L 43.0938 34.56 C 38.1787 39.9872 36.0625 44.4245 31.3523 49.7152 C 30.1174 51.1022 29.9869 52.992 29.5774 54.6304 C 28.6217 58.1803 28.212 61.8667 24.7988 61.8667 C 18.7915 61.8667 17.0778 56.6779 17.0166 52.5824 Z" fill="red"/%3E%3Cpath d="M 57.3612 9.6427 C 57.3612 11.3016 56.0165 12.6464 54.3575 12.6464 C 52.6986 12.6464 51.3539 11.3016 51.3539 9.6427 C 51.3539 7.9837 52.6986 6.6389 54.3575 6.6389 C 56.0165 6.6389 57.3612 7.9837 57.3612 9.6427 ZM 59.1361 35.7205 C 60.6442 35.7205 61.8667 34.498 61.8667 32.9899 L 61.8667 4.864 C 61.8667 3.3559 60.6442 2.1333 59.1361 2.1333 L 49.579 2.1333 C 48.0709 2.1333 46.8484 3.3559 46.8484 4.864 L 46.8484 32.9899 C 46.8484 34.498 48.0709 35.7205 49.579 35.7205 L 59.1361 35.7205 Z" fill="red"/%3E%3C/svg%3E') right center no-repeat transparent;
+	background-size: 2*@diameter auto;
+}
+
+//radio + checkbox rules
+@supports (-webkit-appearance: none) or (-moz-appearance: none){
+	label.fancy-radio-checkbox > input[type=radio],
+	label.fancy-radio-checkbox > input[type=checkbox]{
+		--active: @checkedColor;
+		--active-inner: @uncheckedColor;
+		--focus: 2px rgba(@checkedColorR, @checkedColorG, @checkedColorB, .3);
+		--border: @borderColor;
+		--border-hover: @checkedColor;
+		--background: @uncheckedColor;
+		--disabled: @disabledColor;
+		--disabled-inner: @disabledInner;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		height: @diameter;
+		outline: none;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		cursor: pointer;
+		border: 1px solid var(--bc, var(--border));
+		background: var(--b, var(--background));
+		transition: background 0.3s, border-color 0.3s, box-shadow 0.2s, margin .2s;
+		box-sizing: border-box;
+		box-shadow: 0 0 1em #555;
+		margin: 0 0 0 @diameter
+	}
+	label.fancy-radio-checkbox > input[type=radio]:after,
+	label.fancy-radio-checkbox > input[type=checkbox]:after{
+		content: '';
+		display: block;
+		left: 0;
+		top: 0;
+		position: absolute;
+		transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+		box-sizing: inherit
+	}
+	label.fancy-radio-checkbox > input[type=radio]:checked,
+	label.fancy-radio-checkbox > input[type=checkbox]:checked{
+		--b: var(--active);
+		--bc: var(--active);
+		--d-o: .3s;
+		--d-t: .6s;
+		--d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+		margin: 0 @diameter 0 0
+	}
+	label.fancy-radio-checkbox > input[type=radio]:disabled,
+	label.fancy-radio-checkbox > input[type=checkbox]:disabled{
+		--b: var(--disabled);
+		cursor: not-allowed;
+		opacity: 0.9
+	}
+	label.fancy-radio-checkbox > input[type=radio]:disabled:checked,
+	label.fancy-radio-checkbox > input[type=checkbox]:disabled:checked{
+		--b: var(--disabled-inner);
+		--bc: var(--border);
+	}
+	label.fancy-radio-checkbox > input[type=radio]:disabled + label,
+	label.fancy-radio-checkbox > input[type=checkbox]:disabled + label{
+		cursor: not-allowed;
+	}
+	label.fancy-radio-checkbox > input[type=radio]:hover:not(:checked):not(:disabled),
+	label.fancy-radio-checkbox > input[type=checkbox]:hover:not(:checked):not(:disabled){
+		--bc: var(--border-hover);
+	}
+	label.fancy-radio-checkbox > input[type=radio]:focus,
+	label.fancy-radio-checkbox > input[type=checkbox]:focus{
+		box-shadow: 0 0 0 var(--focus);
+	}
+	label.fancy-radio-checkbox > input[type=radio]:not(.switch),
+	label.fancy-radio-checkbox > input[type=checkbox]:not(.switch){
+		width: @diameter;
+	}
+	label.fancy-radio-checkbox > input[type=radio] + label,
+	label.fancy-radio-checkbox > input[type=checkbox] + label{
+		font-size: 14px;
+		line-height: @diameter;
+		display: inline-block;
+		vertical-align: top;
+		cursor: pointer;
+		margin-left: 4px
+	}
+	label.fancy-radio-checkbox > input[type=radio],
+	label.fancy-radio-checkbox > input[type=checkbox]{
+		border-radius: 50%
+	}
+	label.fancy-radio-checkbox > input[type=radio]:after,
+	label.fancy-radio-checkbox > input[type=checkbox]:after{
+		width: 19px;
+		height: 19px;
+		border-radius: 50%;
+		background: var(--active-inner);
+		opacity: 0;
+		transform: scale(var(--s, 0.7))
+	}
+	label.fancy-radio-checkbox > input[type=radio]:checked,
+	label.fancy-radio-checkbox > input[type=checkbox]:checked{
+		--s: .5;
+		box-shadow: 0 0 1em #000
+	}
+}
